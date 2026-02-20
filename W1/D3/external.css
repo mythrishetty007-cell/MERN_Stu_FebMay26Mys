@@ -1,0 +1,20 @@
+.box{
+    width: 200px;
+    height: 200px;
+    background-color: lightblue;
+}
+.box2{
+    margin: 30px; /* All 4 sides same size */
+   /* margin: 10px 30px; /* Top: 10 right:30 */
+    margin: 10px 30px 20px 40px; /* Top: 10 right:30 bottom:20 left:40 */
+    margin: auto; /* Centers horizontal*/
+}
+body{
+    background-color: rgb(red, green, blue);
+}
+.border{
+    border: 2px solid black;
+    border-right: 3px dotted red;
+    border-bottom: 4px dashed blue;
+    border-radius: 20px;
+}
