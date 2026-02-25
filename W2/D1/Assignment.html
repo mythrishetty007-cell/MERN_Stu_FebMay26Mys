@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Tasks Demo</title>
+<style>
+
+/* 1. Sticky Navbar */
+.navbar {
+  position: sticky;
+  top: 0;
+  background: black;
+  padding: 10px;
+  z-index: 1000;
+}
+
+.navbar a {
+  color: white;
+  margin: 10px;
+  text-decoration: none;
+  transition: 0.3s;   /* 6. transition effect */
+}
+
+.navbar a:hover {
+  color: yellow;
+}
+
+/* 2. z-index overlapping */
+.box1, .box2 {
+  width: 120px;
+  height: 120px;
+  position: absolute;
+}
+
+.box1 {
+  background: red;
+  top: 120px;
+  left: 40px;
+  z-index: 1;
+}
+
+.box2 {
+  background: blue;
+  top: 160px;
+  left: 80px;
+  z-index: 2;
+}
+
+/* 3. Fixed Footer */
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: black;
+  color: white;
+  text-align: center;
+  padding: 10px;
+}
+
+/* 4. Button hover animation */
+.btn {
+  margin: 40px;
+  padding: 10px 20px;
+  background: green;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.btn:hover {
+  transform: scale(1.2);
+}
+
+/* 5. Bouncing Ball */
+.ball {
+  width: 50px;
+  height: 50px;
+  background: orange;
+  border-radius: 50%;
+  position: relative;
+  animation: bounce 1s infinite alternate;
+}
+
+@keyframes bounce {
+  from { top: 0; }
+  to { top: 150px; }
+}
+
+/* 7. House using position relative */
+.house {
+  width: 200px;
+  height: 200px;
+  background: yellowgreen;
+  margin: 50px auto;
+  position: relative;
+  border: 3px solid black;
+}
+
+.roof {
+  width: 240px;
+  height: 30px;
+  background: orange;
+  position: absolute;
+  top: -30px;
+  left: -20px;
+  border: 3px solid black;
+}
+
+.door {
+  width: 50px;
+  height: 90px;
+  background: blue;
+  position: absolute;
+  bottom: 0;
+  left: 75px;
+  border: 3px solid black;
+}
+
+.window1 {
+  width: 40px;
+  height: 60px;
+  background: yellow;
+  position: absolute;
+  top: 40px;
+  left: 20px;
+  border: 3px solid black;
+}
+
+.window2 {
+  width: 40px;
+  height: 60px;
+  background: purple;
+  position: absolute;
+  top: 40px;
+  right: 20px;
+  border: 3px solid black;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="navbar">
+  <a href="#">Home</a>
+  <a href="#">About</a>
+  <a href="#">Contact</a>
+</div>
+
+<!-- z-index boxes -->
+<div class="box1"></div>
+<div class="box2"></div>
+
+<!-- Button -->
+<button class="btn">Hover Me</button>
+
+<!-- Bouncing Ball -->
+<div class="ball"></div>
+
+<!-- House -->
+<div class="house">
+  <div class="roof"></div>
+  <div class="door"></div>
+  <div class="window1"></div>
+  <div class="window2"></div>
+</div>
+
+<div class="footer">
+  Fixed Footer
+</div>
+
+</body>
+</html>
