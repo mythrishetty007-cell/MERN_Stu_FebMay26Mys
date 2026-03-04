@@ -11,7 +11,10 @@ const student = {
         return this.firstName + " "+this.lastName;
     },
     greet(){
-        console.log("Hi, ",this.fullname());
+        console.log("Hi,",this.fullname());
     }
 };
-console.log(student.fullname());
+// console.log(student);
+// console.log(student.scores.math);
+// console.log(student.fullname());
+student.greet();
