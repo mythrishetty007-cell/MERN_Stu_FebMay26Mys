@@ -1,4 +1,4 @@
-// Basics of Click events
+// Basic of Click events
 
 const button = document.getElementById("clickBtn");
 
