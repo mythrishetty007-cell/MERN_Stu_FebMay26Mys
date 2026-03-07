@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio</title>
+
+<style>
+/* Universal Selector */
+ {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* CSS Variables */
+:root {
+    --primary: #2c3e50;
+    --accent: #3498db;
+    --light: #f4f4f4;
+    --white: #ffffff;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: var(--light);
+    line-height: 1.6;
+}
+
+/* Header */
+header {
+    background: var(--primary);
+    padding: 15px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav a {
+    color: var(--white);
+    text-decoration: none;
+}
+
+/* Hero Section (Flexbox) */
+.hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    background: var(--accent);
+    color: var(--white);
+    padding: 20px;
+}
+
+.profile-img {
+    width: 150px;
+    border-radius: 50%;
+    margin: 20px 0;
+}
+
+.cta-button {
+    display: inline-block;
+    background: var(--primary);
+    color: var(--white);
+    padding: 10px 20px;
+    text-decoration: none;
+    margin-top: 10px;
+}
+
+/* About Section */
+section {
+    padding: 40px 20px;
+}
+
+.about {
+    background: var(--white);
+    padding: 20px;
+    border: 1px solid #ddd;
+}
+
+.tag {
+    display: inline-block;
+    background: var(--accent);
+    color: var(--white);
+    padding: 5px 10px;
+    margin: 5px;
+}
+
+/* Skills Section (Grid auto-fit) */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.skills-card {
+    background: var(--white);
+    padding: 20px;
+    border: 1px solid #ccc;
+    transition: 0.3s;
+}
+
+.skills-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Projects Section (Flexbox wrap) */
+.projects-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.project-card {
+    background: var(--white);
+    padding: 20px;
+    border: 1px solid #ccc;
+    width: 300px;
+}
+
+.img-placeholder {
+    height: 150px;
+    background: #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+/* Table Styling */
+table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid #999;
+    padding: 10px;
+    text-align: center;
+}
+
+/* Contact Form */
+.contact-form {
+    background: var(--white);
+    padding: 20px;
+    border: 1px solid #ccc;
+    max-width: 500px;
+    margin: auto;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+}
+
+.submit-btn {
+    display: inline-block;
+    background: var(--primary);
+    color: var(--white);
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<nav>
+<a href="#">T R Mythri</a>
+<ul>
+<li><a href="#home">Home</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#skills">Skills</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
+</header>
+
+<section id="home" class="hero">
+<h1>T R Mythri</h1>
+<img src="myphoto.jpg" alt="Profile Image" class="profile-img">
+<p>Software Developer | MERN Stack | DevOps</p>
+<a href="#contact" class="cta-button">Contact Me</a>
+</section>
+
+<section id="about">
+<h2>About Me</h2>
+<article class="about">
+<h3>Full Stack Developer</h3>
+<p>Experienced in web development and hosting. Specialized in finance-domain projects.</p>
+<span class="tag">NodeJS</span>
+<span class="tag">MongoDB</span>
+<span class="tag">AWS</span>
+</article>
+</section>
+
+<section id="skills">
+<h2>My Skills</h2>
+<div class="skills-grid">
+<div class="skills-card">
+<h4>MERN Stack</h4>
+<p>ReactJS, NodeJS, ExpressJS, MongoDB</p>
+</div>
+<div class="skills-card">
+<h4>DevOps</h4>
+<p>Docker, CI/CD, AWS</p>
+</div>
+</div>
+</section>
+
+<section id="projects">
+<h2>My Projects</h2>
+<div class="projects-container">
+<div class="project-card">
+<div class="img-placeholder">Image</div>
+<h4>Gola Cab Service</h4>
+<p>Rapid way to book a cab hassle free.</p>
+<a href="https://www.gola.com" target="_blank">View Details</a>
+</div>
+</div>
+
+<table>
+<thead>
+<tr>
+<th rowspan="2">Project</th>
+<th colspan="2">Technologies</th>
+</tr>
+<tr>
+<th>Frontend</th>
+<th>Backend</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cab Booking</td>
+<td>React</td>
+<td>NodeJS</td>
+</tr>
+</tbody>
+</table>
+</section>
+
+<section id="contact">
+<h2>Contact Me</h2>
+<form class="contact-form">
+<fieldset>
+<legend>Contact Form</legend>
+
+<div class="form-group">
+<label for="name">Name</label>
+<input type="text" id="name" required>
+</div>
+
+<div class="form-group">
+<label for="email">Email</label>
+<input type="email" id="email" required>
+</div>
+
+<div class="form-group">
+<label>Role</label><br>
+<input type="radio" name="role" value="student" required> Student
+<input type="radio" name="role" value="professional"> Professional
+</div>
+
+<div class="form-group">
+<label for="type">Type</label>
+<select id="type" required>
+<option value="">Select</option>
+<option>FTE</option>
+<option>Consultant</option>
+</select>
+</div>
+
+<div class="form-group">
+<label for="message">Message</label>
+<textarea id="message" rows="4" required></textarea>
+</div>
+
+<button type="submit" class="submit-btn">Send</button>
+
+</fieldset>
+</form>
+</section>
+
+<footer style="text-align:center; padding:20px; background:var(--primary); color:white;">
+© 2026 T R Mythri
+</footer>
+
+</body>
+</html>
