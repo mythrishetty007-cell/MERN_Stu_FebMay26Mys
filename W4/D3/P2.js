@@ -18,7 +18,7 @@ document.getElementById("readBtn").addEventListener("click",function(){
 
 document.getElementById("removeBtn").addEventListener("click",function(){
     localStorage.removeItem("loggedIn");
-    output.textContent = "Removed 'loggedIn' ";
+    output.textContent = "Removed 'loggedIn'";
     output.style.color = "green";
 });
 
