@@ -23,7 +23,7 @@ let tickets = [
   
   let pendingIds = pending.map(ticket => ticket.id);
   
-  console.log("Current Ticket:", currentTicket);
-  console.log("Dropped Ticket:", droppedTicket);
-  console.log("Pending Tickets:", pending);
-  console.log("Pending Ticket IDs:", pendingIds);
+  console.log("Current Ticket: ", currentTicket);
+  console.log("Dropped Ticket: ", droppedTicket);
+  console.log("Pending Tickets: ", pending);
+  console.log("Pending Ticket IDs: ", pendingIds);
