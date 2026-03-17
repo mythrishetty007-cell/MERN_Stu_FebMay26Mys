@@ -4,7 +4,7 @@ const message = document.getElementById("message");
 
 confirmPassword.addEventListener("input", function () {
 
-    // Password validation
+    // Password Validation
     const password = Password.value;
     const confirmpassword = confirmPassword.value;
    
