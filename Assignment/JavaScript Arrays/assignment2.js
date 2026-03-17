@@ -22,6 +22,6 @@ let rules = [
     return acc;
   }, {});
 
-  console.log("Allowed Rules:", allowedRules);
-  console.log("Allowed Pairs:", allowedPairs);
-  console.log("Summary:", summary);
+  console.log("Allowed Rules: ", allowedRules);
+  console.log("Allowed Pairs: ", allowedPairs);
+  console.log("Summary: ", summary);
