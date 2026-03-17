@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Assignment</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body class="bg-gray-100 p-6">
+
+  <!-- Task 1: Notification Center -->
+  <div class="bg-white p-4 rounded shadow m-4">
+    <div class="justify-between items-center inline-flex mb-3">
+      <h2 class="text-xl font-bold tracking-wide">Notification Center</h2>
+      <p class="items-center bg-blue-500 rounded-md w-15">3 New</p>
+    </div>
+
+    <div class="bg-red-100 border-l border-red-500 p-3 mb-3">
+      <h3 class="font-bold">Action Required</h3>
+      <p class="leading-relaxed">Payment failed. Update your method.</p>
+    </div>
+
+    <div class="bg-yellow-100 border-l border-yellow-500 p-3">
+      <h3 class="font-bold">Maintenance Notice</h3>
+      <p>System maintenance tonight.</p>
+    </div>
+
+    <div class="gap-3 mt-4">
+      <button class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded shadow">
+        View All
+      </button>
+      <button class="border border-gray-400 text-gray-700 px-4 py-2 hover:bg-gray-100  rounded shadow">
+        Dismiss
+      </button>
+    </div>
+  </div>
+  <!-- Task 2. Metric snapshot strip -->
+   <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metric snapshot strip</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+</head>
+<body class="bg-gray-100 p-6">
+  <div class="bg-white p-6 rounded-lg shadow m-6">
+    <div class="inline-flex items-center">
+      <div class="m-4">
+        <p class="tracking-wide">Active Users</p>
+        <p class="text-xl font-bold leading-relaxed">12,480</p>
+        <span class="bg-green-100 p-1 rounded-full inline-flex items-center">
+          Up
+        </span>
+      </div>
+      <div class="m-4">
+        <p class="tracking-wide">Requests / Min</p>
+        <p class="text-xl font-bold leading-relaxed">1,240</p>
+        <span class="bg-blue-100 p-1 rounded-full inline-flex items-center">
+          Stable
+        </span>
+      </div>
+      <div class="m-4">
+        <p class="tracking-wide">Error Rate</p>
+        <p class="text-xl font-bold leading-relaxed">2.1%</p>
+        <span class="bg-red-100 p-1 rounded-full inline-flex items-center">
+          Down
+        </span>
+      </div>
+      <div class="m-4">
+        <button class="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-lg shadow">
+          Download Report
+        </button>
+      </div>
+    </div>
+    <div class="bg-red-100 border-l-4 border-red-500 p-3 m-4 leading-relaxed">
+      Scheduled maintenance tonight may briefly affect dashboard updates.
+    </div>
+</div>
+</body>
+</html>
