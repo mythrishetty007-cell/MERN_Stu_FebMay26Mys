@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi-Section Feedback Analyzer</title>
+</head>
+<body>
+    <form id="feedbackForm">
+        <label>Name: <input type="text" id="fbname" required></label><br><br>
+        <label>Email: <input type="text" id="fbemail" required></label><br><br>
+        <label>Feedback type: 
+            <select id="fbtype" required>
+                <option value="">Select Feedback</option>
+                <option value="Bug">Bug</option>
+                <option value="Suggestion">Suggestion</option>
+                <option value="Appreciation">Appreciation</option>
+            </select>
+        </label><br><br>
+        <label>Feedback: <input type="text" id="feedbacks" required></label><br><br>
+        <button type="submit">Submit</button>
+    </form>
+    <p id="message"></p>
+    <h3>Total Feedback: <span id="count">0</span></h3><br><br>
+    <div id="feedbackCard"></div>
+    <button id="deleteBtn">Delete</button>
+    <script src="./assign3.js"></script>
+</body>
+</html>
