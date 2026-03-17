@@ -1,4 +1,4 @@
-// Introduction to callback function
+// Introduction to callback
 function greetUser(name,callback){
     console.log("Hello , "+name);
     // The callback function is executed only after the 
