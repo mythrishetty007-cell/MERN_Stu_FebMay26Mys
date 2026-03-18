@@ -21,6 +21,7 @@ function invoice(gstRate = 0.18, ...items) {
         total: total
     };
 }
+
 // Example
 let result = invoice(
     0.18,
