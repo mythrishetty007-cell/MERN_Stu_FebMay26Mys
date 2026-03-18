@@ -9,7 +9,7 @@ function tagPassword(password){
     for(let i=0; i<password.length; i++){
         let ch = password[i];
 
-        if(ch>='a'&& ch<='z' || ch>='A' && ch<='Z'){
+        if(ch>='a' && ch<='z' || ch>='A' && ch<='Z'){
             hasLetter = true;
         }
         if(ch>='0' && ch<='9'){
