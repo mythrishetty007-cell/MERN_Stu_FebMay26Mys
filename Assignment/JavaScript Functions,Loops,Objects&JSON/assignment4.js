@@ -4,7 +4,6 @@ const getRoute = function(role, isLoggedIn) {
         return "/login";
     } 
     else {
-
         switch(role) {
             case "admin":
                 return "/admin";
