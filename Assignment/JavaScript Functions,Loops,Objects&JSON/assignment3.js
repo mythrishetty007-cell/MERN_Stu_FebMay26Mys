@@ -18,5 +18,5 @@ let defaultSettings = {
     a:1,b:2,c:3
 };
 let savedSettingsJSON = `{"b":10,"c":20}`;
-let result = mergeSettings(savedSettingsJSON,defaultSettings);
+let result = mergeSettings(savedSettingsJSON, defaultSettings);
 console.log(result);
