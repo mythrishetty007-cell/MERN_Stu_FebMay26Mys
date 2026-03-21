@@ -22,20 +22,20 @@
 
         <div class="order-2 lg:order-1 flex-1 lg:max-w-lg text-center lg:text-left">
 
-            <h1 class="text-5xl mb-6">T R Mythri</h1>
+            <h1 class="text-5xl mb-6" data-key="name">T R Mythri</h1>
 
-            <p class="text-xl lg:text-2xl text-slate-600 font-bold mb-10 max-w-md mx-auto lg:mx-0">
+            <p class="text-xl lg:text-2xl text-slate-600 font-bold mb-10 max-w-md mx-auto lg:mx-0" data-key="role">
                 Full-Stack developer | MERN enthusiast | Competitive Programmer
             </p>
 
             <div
                 class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center lg:items-start mb-8">
 
-                <a href="#projects" class="bg-red-400 hover:bg-green-500 px-10 py-4 rounded shadow-xl">
+                <a href="#projects" class="bg-red-400 hover:bg-green-500 px-10 py-4 rounded shadow-xl" data-key="projects_btn">
                     View Projects
                 </a>
 
-                <a href="#resume" class="bg-blue-400 hover:bg-green-500 px-10 py-4 rounded shadow-xl">
+                <a href="#resume" class="bg-blue-400 hover:bg-green-500 px-10 py-4 rounded shadow-xl" data-key="resume_btn">
                     Download Resume
                 </a>
 
@@ -53,7 +53,7 @@
 
         <div class="order-1 lg:order-2 w-full lg:w-96 max-w-sm mx-auto lg:mx-0 bg-white">
 
-            <img src="assets/images/img.jpg" alt="My photo"
+            <img src="assets/images/profile.jpeg" alt="My photo"
                 class="aspect-square w-full rounded shadow-lg mx-auto lg:mx-0 hover:ring-blue-500 transition-all duration-300 hover:scale-[1.02]"
                 loading="lazy">
 
@@ -82,6 +82,13 @@
 
             </ul>
             <button id="theme-toggle" class="bg-gray-200 px-4 py-2 rounded font-bold">Theme</button>
+            
+            <select id="language-selector">lang
+                <option value="en">English</option>
+                <option value="kn">ಕನ್ನಡ</option>
+                <option value="hi">हिन्दी</option>
+            </select>
+
             <a href="#contact" class="bg-red-400 hover:bg-green-500 rounded transition-all duration-300 px-8 py-3">
                 Let's talk
             </a>
@@ -98,7 +105,7 @@
 
             <div class="text-center mb-10">
 
-                <h2 class="text-4xl lg:text-5xl mb-6">My Projects</h2>
+                <h2 class="text-4xl lg:text-5xl mb-6" data-key="projects_title">My Projects</h2>
 
                 <p class="text-xl max-w-2xl mx-auto">
                     Enterprise scale full-stack applications built with modern frameworks
@@ -118,6 +125,7 @@
             <!-- Project Filter Bar -->
 
             <div id="project-filters" class="flex flex-wrap justify-center gap-4 mb-12">
+                
             </div>
 
             <!-- Dynamic container for projects -->
@@ -135,10 +143,64 @@
 
         <div class="max-w-4xl mx-auto">
 
-            <h2 class="text-4xl text-gray-700 text-center mb-20">
+            <h2 class="text-4xl text-gray-700 text-center mb-20" data-key="experience_title">
                 Education and Experience
             </h2>
+            <!-- Education -->
+             <div class="space-y-8">
+                <!-- Card 1 -->
+                 <div class="group shadow-2xl rounded-3xl p-8 hover:shadow-4xl transition-all relative overflow-hidden bg-white">
+                    <div class="absolute inset-0 bg-blue-400 opacity-0 group-hover:opacity-100 transition-opacity">
+                    </div>
+                    <div class="relative z-10 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
+                        <div class="flex items-center gap-4">
+                            <div class="w-16 h-16 bg-emarald-400 rounded flex items-center justify-center shadow-2xl">
+                                <span class="text-white font-bold">VTU</span>
+                            </div>
+                            <div class="text-semibold text-2xl">
+                                B.E in Computer Science (2022-26)
+                            </div>
+                            <p class="text-lg font-semibold">C.I.T</p>
+                            <p class="text-md font-semibold">CGPA: 8.04</p>
 
+                        </div>
+                    </div>
+                 </div>
+                <!-- Card 2  -->
+                 <div class="group shadow-2xl rounded-3xl p-8 hover:shadow-4xl transition-all relative overflow-hidden bg-white">
+                    <div class="absolute inset-0 bg-blue-400 opacity-0 group-hover:opacity-100 transition-opacity">
+                    </div>
+                    <div class="relative z-10 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
+                        <div class="flex items-center gap-4 ">
+                            <div class="w-16 h-16 bg-emarald-400 rounded flex items-center justify-center shadow-2xl">
+                                <span class="text-white font-bold">PUC</span>
+                            </div>
+                            <div class="text-semibold text-2xl">
+                                PCMB (2020-22)
+                            </div>
+                            <p class="text-lg font-semibold">Abhinava Bharathi College</p>
+                            <p class="text-md font-semibold">Percentage: 75%</p>
+                        </div>
+                    </div>
+                 </div>
+                <!-- Card 3 -->
+                <div class="group shadow-2xl rounded-3xl p-8 hover:shadow-4xl transition-all relative overflow-hidden bg-white">
+                    <div class="absolute inset-0 bg-blue-400 opacity-0 group-hover:opacity-100 transition-opacity">
+                    </div>
+                    <div class="relative z-10 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
+                        <div class="flex items-center gap-4 ">
+                            <div class="w-16 h-16 bg-emarald-400 rounded flex items-center justify-center shadow-2xl">
+                                <span class="text-white font-bold text-center">State Borad</span>
+                            </div>
+                            <div class="text-semibold text-2xl">
+                                SSLC (2020)
+                            </div>
+                            <p class="text-lg font-semibold">Global Public School</p>
+                            <p class="text-md font-semibold">Percentage: 72%</p>
+                        </div>
+                    </div>
+                 </div>
+             </div>
             <!-- existing experience cards remain unchanged -->
 
         </div>
@@ -151,7 +213,7 @@
 
         <div class="max-w-7xl mx-auto">
 
-            <h2 class="text-4xl text-center font-bold mb-20">
+            <h2 class="text-4xl text-center font-bold mb-20" data-key="skills_title">
                 Skills
             </h2>
 
@@ -219,7 +281,6 @@
     </div>
 
     <!-- MAIN JS ENTRY -->
-    <script src="js/data/projects.js"></script>
     <script src="js/data/skills.js"></script>
     <script src="js/features/skills-render.js"></script>
     <script src="js/features/modal.js"></script>
@@ -227,7 +288,10 @@
     <script src="js/features/theme-toggle.js"></script>
     <script src="js/data/projects.js"></script>
     <script src="js/features/projects-render.js"></script>
+    <script src="js/features/language-switcher.js"></script>
     <script src="js/features/project-filter.js"></script>
+    <script src="js/features/project-search.js"></script>
+    <script src="js/features/developer-stats.js"></script>
     <script src="js/main.js"></script>
 
 </body>
