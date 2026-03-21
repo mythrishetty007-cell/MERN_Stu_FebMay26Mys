@@ -5,4 +5,7 @@ document.addEventListener("DOMContentLoaded",function(){
     initContactValidation();
     initThemeToggle();
     renderProjects();
+    initLanguageSelector();
+    projectfilter();
+    projectsearch();
 })
