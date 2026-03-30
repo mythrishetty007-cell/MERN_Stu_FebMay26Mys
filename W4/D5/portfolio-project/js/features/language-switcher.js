@@ -2,7 +2,7 @@ function initLanguageSelector() {
   const translations = {
     en: {
       name: "T R Mythri",
-      role: "Full-Stack developer | MERN enthusiast",
+      role: "Full-Stack developer | MERN enthusiast | Competitive Programmer",
       projects_btn: "View Projects",
       resume_btn: "Download Resume",
       projects_title: "My Projects",
@@ -11,7 +11,7 @@ function initLanguageSelector() {
     },
     kn: {
       name: "ಟಿ ಆರ್ ಮೈತ್ರಿ",
-      role: "ಫುಲ್-ಸ್ಟ್ಯಾಕ್ ಡೆವಲಪರ್ | ಮರ್ನ್ (MERN) ಉತ್ಸಾಹಿ",
+      role: "ಫುಲ್-ಸ್ಟ್ಯಾಕ್ ಡೆವಲಪರ್ | ಮರ್ನ್ (MERN) ಉತ್ಸಾಹಿ | ಕಾಂಪಿಟಿಟಿವ್ ಪ್ರೋಗ್ರಾಮರ್",
       projects_btn: "ಪ್ರಾಜೆಕ್ಟ್ ನೋಡಿ",
       resume_btn: "ರೆಸ್ಯೂಮ್ ಡೌನ್‌ಲೋಡ್",
       projects_title: "ನನ್ನ ಯೋಜನೆಗಳು",
@@ -20,7 +20,7 @@ function initLanguageSelector() {
     },
     hi: {
       name: "टी आर मैत्री",
-      role: "फुल-स्टैक डेवलपर | एमईआरएन उत्साही",
+      role: "फुल-स्टैक डेवलपर | एमईआरएन उत्साही | कॉम्पिटिटिव प्रोग्रामर",
       projects_btn: "परियोजनाएं देखें",
       resume_btn: "रिज्यूमे डाउनलोड करें",
       projects_title: "मेरी परियोजनाएं",
