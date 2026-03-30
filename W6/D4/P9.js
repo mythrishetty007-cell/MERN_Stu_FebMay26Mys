@@ -12,11 +12,15 @@ const server = http.createServer(function (req, res) {
 
         res.writeHead(200,{"Content-Type":"application/json"});
         res.end(JSON.stringify({
-            route: "users/:id",
+            route: "/users/:id",
             userId: userId
         }));
         return;
     }
+    //405: URL route is valid but the method is not supported
+    res.writeHead(405,{"Content-Type":"application/json"});
+    res.end(JSON.stringify({message:"method not found"}));
+
     res.writeHead(404,{"Content-Type":"application/json"});
     res.end(JSON.stringify({message:"Route not found"}));
 });
