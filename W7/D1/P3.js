@@ -1,4 +1,4 @@
-//handling different http methods in express
+//Handling different http methods in express
 
 const express=require("express");
 
