@@ -129,3 +129,7 @@ app.get("/me",authenticateAccessToken,function(req,res){
 app.listen(4000,function(){
     console.log("JWT demo server running @ http://localhost:4000");
 });
+
+// curl -X POST http://localhost:4000/login -H "Content-Type:application/json" -d "{\"email\":\"email@email.com\",\"password\":\"pass@123\"}" 
+// curl -X POST http://localhost:4000/refresh -H "Content-Type:application/json" -d "{\"refreshToken\":\"refreshToken\"}"
+// curl http://localhost:4000/me -H "Authorization:Bearer accessToken" 
