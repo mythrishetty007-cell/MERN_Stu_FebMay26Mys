@@ -12,7 +12,8 @@ const {
 } = require("./validator");
 const {
     getCurrentBooking,
-    processBookingAsync
+    processBookingAsync,
+    confirmBooking
 } = require("./booking");
 const {
     cancelBooking
