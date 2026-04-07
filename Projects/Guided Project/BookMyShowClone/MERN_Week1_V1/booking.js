@@ -107,5 +107,6 @@ module.exports = {
     getCurrentBooking,
     clearCurrentBooking,
     processBooking,
-    processBookingAsync
+    processBookingAsync,
+    confirmBooking
 };
