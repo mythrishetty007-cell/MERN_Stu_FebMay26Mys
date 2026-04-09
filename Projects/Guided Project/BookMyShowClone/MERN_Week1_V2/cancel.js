@@ -2,8 +2,9 @@
 // To cancel the existing booking if exists
 const bookingEmitter = require("./events");
 const {getCurrentBooking,clearCurrentBooking} = require("./booking");
+const { appendLogAsync } = require("./fileManager"); //New
 
-function cancelBooking(movies){
+async function cancelBooking(movies) { //New
     const booking = getCurrentBooking();
 
     if (!booking) {
@@ -29,6 +30,7 @@ function cancelBooking(movies){
     // clear current Booking
     clearCurrentBooking();
 
+    await appendLogAsync(`Booking cancelled: ${booking.bookingId} for ${booking.movieTitle}`); //New
     bookingEmitter.emit("bookingCancelled",booking);
 
     return booking;
