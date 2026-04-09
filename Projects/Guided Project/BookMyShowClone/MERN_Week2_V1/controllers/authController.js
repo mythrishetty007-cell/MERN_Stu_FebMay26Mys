@@ -6,7 +6,7 @@ const CustomError = require("../utils/customError");
 
 const { JWT_SECRET } = require("../middleware/authMiddleware");
 
-function login(req, res, next) {
+function loginUser(req, res, next) {
     try {
         const { email, password } = req.body;
 
@@ -86,7 +86,7 @@ function getProfile(req, res, next) {
 }
 
 module.exports = {
-    logoutUser,
+    loginUser,
     logoutUser,
     getProfile
 };
