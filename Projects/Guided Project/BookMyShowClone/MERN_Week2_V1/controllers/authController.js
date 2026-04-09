@@ -10,12 +10,12 @@ function loginUser(req, res, next) {
     try {
         const { email, password } = req.body;
 
-        if (!email || password) {
+        if (!email || !password) {
             return next(new CustomError("email/password are required.", 400));
         }
         const user = users.find((u) => u.email === email && u.password === password);
 
-        if (!users) {
+        if (!user) {
             return next(new CustomError("Invalid email/password", 401));
         }
 
