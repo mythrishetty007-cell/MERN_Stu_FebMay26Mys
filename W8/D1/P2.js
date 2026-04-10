@@ -22,7 +22,7 @@ async function runCrudDemo(){
             role: "demo-student"
         });
         await firstStudent.save();
-        console.log("Created new student with save()",firstStudent);
+        // console.log("Created new student with save()",firstStudent);
 
         // Create using create()
         const secondStudent = await Student.create({
@@ -34,15 +34,15 @@ async function runCrudDemo(){
         
         // Read using find()
         const allDemoStudents = await Student.find({role:"demo-student"});
-        console.log("Read with find(): ",allDemoStudents);
+        // console.log("Read with find(): ",allDemoStudents);
 
         // Read using findOne()
         const oneDemoStudent = await Student.findOne({name:"Shanthala"});
-        console.log("Read with findOne(): ",oneDemoStudent);
+        // console.log("Read with findOne(): ",oneDemoStudent);
 
         // Update using findByIdAndUpdate()
         const updatedStudent = await Student.findByIdAndUpdate(
-            secondStudent._id,
+            {_id: ObjectId("69d87e93e325c76138250696")}, 
             {age:22},
             {new:true}
         );
@@ -50,7 +50,7 @@ async function runCrudDemo(){
 
         // Delete using findByIdAndDelete()
         const deletedStudent = await Student.findByIdAndDelete(firstStudent._id);
-        console.log("Deleted with findByIdAndDelete():",deletedStudent);
+        // console.log("Deleted with findByIdAndDelete():",deletedStudent);
 
         await mongoose.connection.close();
         console.log("connection closed");
