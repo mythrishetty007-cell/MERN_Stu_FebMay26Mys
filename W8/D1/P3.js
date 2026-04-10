@@ -9,7 +9,7 @@ async function runFilterDemo(){
         const productSchema = new mongoose.Schema({
             name:String,
             price:Number,
-            catagory:String,
+            category:String,
             status:String
         });
 
@@ -18,23 +18,23 @@ async function runFilterDemo(){
         await Product.create([
             {name: "Book",
             price: 60,
-            catagory: "Stationary",
+            category: "Stationary",
             status:"active"},
             {name: "Pen",
             price: 5,
-            catagory: "Stationary",
+            category: "Stationary",
             status:"inactive"},
             {name: "Laptop",
             price: 50000,
-            catagory: "Electronics",
+            category: "Electronics",
             status:"active"},
             {name: "Phone",
             price: 30000,
-            catagory: "Electronics",
+            category: "Electronics",
             status:"active"},
             {name: "CD",
             price: 50,
-            catagory: "Electronics",
+            category: "Electronics",
             status:"inactive"}
         ]);
 
