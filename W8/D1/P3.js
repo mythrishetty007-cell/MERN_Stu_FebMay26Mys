@@ -1,12 +1,6 @@
 // Applied filters to the query using comparsion operators 
 const mongoose = require("mongoose");
-
-async function runFilterDemo(){
-    try{
-        await mongoose.connect("mongodb://localhost:27017/merntraining");
-        console.log("MongoDB connected successfully");
-
-        const productSchema = new mongoose.Schema({
+const productSchema = new mongoose.Schema({
             name:String,
             price:Number,
             category:String,
@@ -14,6 +8,19 @@ async function runFilterDemo(){
         });
 
         const Product = mongoose.models.Product || mongoose.model("Product",productSchema); 
+async function runFilterDemo(){
+    try{
+        await mongoose.connect("mongodb://localhost:27017/merntraining");
+        console.log("MongoDB connected successfully");
+
+        // const productSchema = new mongoose.Schema({
+        //     name:String,
+        //     price:Number,
+        //     category:String,
+        //     status:String
+        // });
+
+        // const Product = mongoose.models.Product || mongoose.model("Product",productSchema); 
 
         await Product.create([
             {name: "Book",
@@ -54,4 +61,6 @@ async function runFilterDemo(){
         console.log("Filter demo error:",error.message);
     }
 }    
-runFilterDemo();
+// runFilterDemo();
+
+module.exports = Product;
