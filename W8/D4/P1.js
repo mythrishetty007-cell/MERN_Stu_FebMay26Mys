@@ -4,7 +4,7 @@ const { log } = require("node:console");
 
 async function main(){
     try{
-        await mongoose.connect('mongodb://localhost:27017/embrel');
+        await mongoose.connect('mongodb://localhost:27017/datedb');
         console.log("Connected to MongoDB");
         const schema = new mongoose.Schema({
             name:String,
