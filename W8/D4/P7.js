@@ -16,6 +16,7 @@ async function verifyOTP(input,hash) {
 
 (async () => {
     const otp = generateOTP();
+    // 10 indicated salt round 2^10
     console.log("Generated otp: ",otp);
 
     const hashedOtp = await hashOTP(otp);
