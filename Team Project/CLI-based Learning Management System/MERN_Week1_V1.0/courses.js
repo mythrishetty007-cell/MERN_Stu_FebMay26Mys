@@ -13,7 +13,7 @@ const courses = [
         level:"Easy",
         category:"Web Development",
         limit:50,
-        enroll_status:20
+        enroll_status:0
     },
     {
         id:2,
@@ -29,7 +29,7 @@ const courses = [
         level:"Modern",
         category:"Database",
         limit:100,
-        enroll_status:50
+        enroll_status:0
     },
     {
         id:3,
@@ -47,10 +47,10 @@ const courses = [
         level:"Modern",
         category:"Programming",
         limit:150,
-        enroll_status:75
+        enroll_status:0
     },
     {
-        id:3,
+        id:4,
         title:"Verbal Ability",
         instructor:"Viganesh",
         description:"Communication based Skills",
@@ -63,7 +63,7 @@ const courses = [
         level:"Modern",
         category:"Soft Skills",
         limit:100,
-        enroll_status:40
+        enroll_status:0
     }
 ];
 
