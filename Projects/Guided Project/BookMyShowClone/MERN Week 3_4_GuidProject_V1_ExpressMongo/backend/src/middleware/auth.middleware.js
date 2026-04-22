@@ -1,5 +1,5 @@
 const jwt = require("jsonwebtoken");
-const user = require("../models/User");
+const User = require("../models/User");
 
 // Auth middleware
 exports.protect = async(req,res,next)=>{
@@ -9,7 +9,7 @@ exports.protect = async(req,res,next)=>{
             req.headers.authorization &&
             req.headers.authorization.startsWith("Bearer")
         ){
-            token = req.authorization.split(" ")[1];
+            token = req.headers.authorization.split(" ")[1];
         }
         if(!token){
             return res.status(401).json({
@@ -22,7 +22,7 @@ exports.protect = async(req,res,next)=>{
         const decoded = jwt.verify(token,process.env.JWT_SECRET);
         
         // Get user from DB
-        const user = await Uesr.findById(decoded.id);
+        const user = await User.findById(decoded.id);
 
         if(!user){
             return res.status(404).json({
