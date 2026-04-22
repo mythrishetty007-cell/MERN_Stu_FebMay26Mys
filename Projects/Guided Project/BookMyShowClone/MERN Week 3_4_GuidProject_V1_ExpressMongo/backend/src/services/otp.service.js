@@ -7,7 +7,7 @@ exports.generateOTP = async(email) => {
 
     const hashedOTP = await bcrypt.hash(otp,10);
 
-    const expiresAt = new Date(Date.now() + 5*60*1000);
+    const expiresAt = new Date(Date.now() + 5*60*10000);
 
     await OTP.create({
         email,
