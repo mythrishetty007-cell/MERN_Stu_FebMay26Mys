@@ -1,14 +1,14 @@
 const User = require("../models/User");
-const OTP =require("../models/OTP");
+const OTP = require("../models/OTP");
 const otpService = require("./otp.service");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 
-// Register User
-exports.registerUser = async ({name,email,password}) => {
+// Register user
+exports.registerUser = async ({name,email,password}) =>{
     const existingUser = await User.findOne({email});
 
-    if(existingUser){
+    if (existingUser) {
         throw new Error("User already exists");
     }
 
@@ -21,20 +21,20 @@ exports.registerUser = async ({name,email,password}) => {
     await otpService.generateOTP(email);
 
     return {email:user.email};
-} ;
+};
 
-//Verify OTP 
+//Verify OTP
 exports.verifyOTP = async({email,otp})=>{
-    const record = await OTP.findOne({email}).select("+otp"); 
+    const record = await OTP.findOne({email}).select("+otp");
 
-    if(!record){
+    if (!record) {
         throw new Error("OTP expired or not found");
     }
 
     const isMatch = await bcrypt.compare(otp,record.otp);
 
-    if(!isMatch){
-        record.attemps +=1;
+    if (!isMatch) {
+        record.attempts +=1;
         await record.save();
         throw new Error("Invalid OTP");
     }
@@ -44,18 +44,18 @@ exports.verifyOTP = async({email,otp})=>{
 };
 
 // Login
-exports.loginUser = async ({email,password}) => {
+exports.loginUser = async ({email,password}) =>{
     const user = await User.findOne({email}).select("+password");
 
-    if(!user){
+    if (!user) {
         throw new Error("User not found");
     }
-    if(!user.isVerified){
+    if (!user.isVerified) {
         throw new Error("User not verified");
     }
     const isMatch = await user.comparePassword(password);
 
-    if(!isMatch){
+    if (!isMatch) {
         throw new Error("Invalid credentials");
     }
 
@@ -69,7 +69,7 @@ exports.loginUser = async ({email,password}) => {
         token,
         user:{
             id:user._id,
-            role:user._role,
+            role:user.role,
         },
     };
 };
