@@ -8,7 +8,7 @@ const {authorize} = require("../middleware/role.middleware");
 router.get("/",showController.getShows);
 router.get("/:id",showController.getShowById);
 
-//Admin only route
+//Admin only routes
 router.post("/",protect,authorize("admin"),showController.createShow);
 router.put("/:id",protect,authorize("admin"),showController.udpateShow);
 router.delete("/:id",protect,authorize("admin"),showController.deleteShow);
