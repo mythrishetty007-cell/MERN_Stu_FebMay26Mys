@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React Introduction</title>
+
+    <!-- React 18 CDN -->
+     <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+
+     <!-- ReactDOM 18 CDN -->
+     <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+     <!-- Babel for JSX conversion in browser -->
+     <script crossorigin src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    <!-- Root container where React injects UI -->
+    <div id="root"></div>
+    <script type="text/babel">
+        // App component
+        // A component is basically a reusable UI block. React apps are 
+        // built using components
+        function App(){ //normal function component
+            return (
+                <div>
+                    <h1>React Introduction</h1>
+                    <p>React simplifies UI creation through reusable components.</p>
+                </div>
+            );
+        }
+
+        // Rendering to DOM (creating the tree structure in DOM)
+        ReactDOM
+        .createRoot(document.getElementById("root"))
+        .render(<App />);
+    </script>
+</body>
+</html>
