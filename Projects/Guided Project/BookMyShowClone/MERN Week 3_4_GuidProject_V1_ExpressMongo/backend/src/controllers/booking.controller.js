@@ -36,11 +36,10 @@ exports.getMyBookings = async (req,res,next) => {
 // Cancel bookings
 exports.cancelBooking = async (req,res,next) => {
     try{
-        await bookingService.cancelBooking(req.params._id,req.user._id);
+        await bookingService.cancelBooking(req.params.id,req.user._id);
         res.status(200).json({
             success:true,
             message:"Bookings cancelled.",
-            data:bookings,
         });
     }
     catch(error){
