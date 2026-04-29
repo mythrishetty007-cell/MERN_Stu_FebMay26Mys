@@ -3,6 +3,7 @@ import {PropBasics} from './components/P1'
 import {PropDestrcturing} from './components/P2'
 import {PropsChildren} from './components/P3'
 import {PropDrillingDemo} from './components/P4'
+import {SharedStateParent} from './components/P5'
 import './App.css'
 function App() {
   return (
@@ -10,7 +11,8 @@ function App() {
       {/* <PropBasics/> 
       <PropDestrcturing/> */}
       {/* <PropsChildren/> */}
-    <PropDrillingDemo/>
+    {/* <PropDrillingDemo/> */}
+    <SharedStateParent/>
     </>
   )
 }
