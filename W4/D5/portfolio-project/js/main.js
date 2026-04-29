@@ -4,8 +4,10 @@ document.addEventListener("DOMContentLoaded",function(){
     initModal();
     initContactValidation();
     initThemeToggle();
+    initDeveloperStats();
     renderProjects();
     initLanguageSelector();
     projectfilter();
     projectsearch();
+    initDeveloperStats();
 })
