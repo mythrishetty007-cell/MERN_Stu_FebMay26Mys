@@ -5,6 +5,7 @@ import {PropsChildren} from './components/P3'
 import {PropDrillingDemo} from './components/P4'
 import {SharedStateParent} from './components/P5'
 import {CompositionDemo} from './components/P6'
+import {ObjectsAndArrayProps} from './components/P7'
 import './App.css'
 function App() {
   return (
@@ -14,7 +15,8 @@ function App() {
       {/* <PropsChildren/> */}
     {/* <PropDrillingDemo/> */}
     {/* <SharedStateParent/> */}
-    <CompositionDemo/>
+    {/* <CompositionDemo/> */}
+    <ObjectsAndArrayProps/>
     </>
   )
 }
