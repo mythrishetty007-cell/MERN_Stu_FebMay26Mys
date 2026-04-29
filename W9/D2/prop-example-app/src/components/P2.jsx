@@ -1,5 +1,5 @@
 // Props destructuring
-import React from "react";
+import {React} from "react";
 // Child component
 function UserProfile({username,skill}){
     return(
