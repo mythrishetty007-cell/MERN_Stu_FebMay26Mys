@@ -7,6 +7,7 @@ import { EventDelegation } from './components/P6'
 import { FormsPattern } from './components/P7'
 import { KeyboardEvent } from './components/P8'
 import { EventObj } from './components/P9'
+import { Accessibility } from './components/P10'
 function App() {
   return (
     <>
@@ -16,9 +17,10 @@ function App() {
       {/* <UseCallbackEvents/> */}
       {/* <EventDelegation /> */}
       {/* <FormsPattern/> */}
-       {/* <KeyboardEvent/> */}
-    <EventObj/>
-    </>
+      {/* <KeyboardEvent/> */}
+      {/* <EventObj/> */}
+      <Accessibility/>
+    </>  
   )
 }
 export default App
