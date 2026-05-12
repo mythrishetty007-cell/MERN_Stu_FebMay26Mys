@@ -1,0 +1,4 @@
+This file was written using writeFileSync().
+Synchronous operation block execution.
+Test appending
+New text added using fs.appendFile.New text added using fs.appendFile.New text added using fs.appendFile.
