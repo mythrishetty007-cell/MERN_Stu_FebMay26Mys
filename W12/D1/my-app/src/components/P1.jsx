@@ -1,7 +1,7 @@
 import { useContext, useState } from "react";
 import { AuthContext } from "../context/AuthContext";
 // Login flow with JWT
-export function LoginFlow(params) {
+export function LoginFlow() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [message, setMessage] = useState("");
@@ -33,7 +33,8 @@ export function LoginFlow(params) {
         return new Promise((resolve, reject) => {
             setTimeout(() => {
                 const matchedUser = demoAccounts.find(
-                    (account) => account.email === loginEmail && account.password === loginPassword
+                    (account) => 
+                        account.email === loginEmail && account.password === loginPassword
                 );
 
                 if (!matchedUser) {
