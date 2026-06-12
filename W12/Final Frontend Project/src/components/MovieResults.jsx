@@ -1,5 +1,5 @@
 import {useState} from "react";
-export default function (){
+export default function MovieResults(){
     const [movies,setMovies] = useState([]);
 
     return(
@@ -10,9 +10,8 @@ export default function (){
                 {movies.map((movie)=>(<li key={movie}>{movie}</li>))}
                 </ul>}
                 <button onClick = {() => {
-                    setMovies(["Inception","Dhurandar","XYZ"])
+                    setMovies(["Inception","Dhurandar","XYZ"]);
                 }}>Load Movies</button>
         </section>
     )
-
 }
