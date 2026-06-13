@@ -1,23 +1,23 @@
-import './App.css'
+import "./App.css";
 import { Routes, Route, useParams, useNavigate, Navigate, Link } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import DashboardSection from "./components/DashboardSection";
 
 const isAuthenticated = true;
 function ProtectedRoute({children}) {
-  if (!isAuthenticated){
-    return <Navigate to="/login" replace />
-  }
-  return children;
+    if (!isAuthenticated) {
+        return <Navigate to="/login" replace />
+    }
+    return children;
 }
 
-function HomePage(){
-  return(
-    <section>
-      <h2>Home</h2>
-      <p>Welcome to Bookmyshow</p>
-    </section>
-  );
+function HomePage() {
+    return(
+      <section>
+        <h2>Home</h2>
+        <p>Welcome to Bookmyshow</p>
+      </section>
+    );
 }
 function MoviePage() {
   const navigate = useNavigate();
@@ -38,14 +38,14 @@ function MoviePage() {
       <ul>
         {movies.map((movie)=>(
           <li key={movie.id}>
-            <Link to={`/movies/${movie.id}`}>{movie.title}</Link>
+              <Link to={`/movies/${movie.id}`}>{movie.title}</Link>
           </li>
         ))}
       </ul>
     </section>
   )
 }
-function MovieDetailsPage(){
+function MovieDetailsPage() {
   const {movieId} = useParams();
   return(
     <section>
@@ -60,12 +60,12 @@ function LoginPage(){
     <section>
       <h2>Login</h2>
       <p>Login Screen</p>
-      <button 
+      <button
         style={styles.button}
         onClick={()=>{
           navigate("/bookings");
         }}
-        >Login</button>
+      >Login</button>
     </section>
   );
 }
@@ -111,41 +111,41 @@ function NotFoundPage(){
 }
 export default function App() {
   return (
-  <div style={styles.container}>   
-    <Navbar />
-    <Routes>
-      {/* Public routes */}
-      <Route path="/" element={<HomePage/>} />
-      <Route path="/movies" element={<MoviePage/>} />
-      <Route path="/movies/:movieId" element={<MovieDetailsPage/>} />
-      <Route path="/login" element={<LoginPage/>} />
-      <Route path="/signup" element={<SignupPage/>} />
+    <div style={styles.container}>
+      <Navbar />
+      <Routes>
+        {/* Public routes */}
+        <Route path="/" element={<HomePage/>} />
+        <Route path="/movies" element={<MoviePage/>} />
+        <Route path="/movies/:movieId" element={<MovieDetailsPage/>} />
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/signup" element={<SignupPage />} />
 
-      {/* Protected routes */}
-      <Route path="/bookings"
-      element={
-        <ProtectedRoute>
-          <BookingsPage/>
-        </ProtectedRoute>
-      } />
+        {/* Protected routes */}
+        <Route path="/bookings" 
+            element={
+            <ProtectedRoute>
+                <BookingsPage /> 
+            </ProtectedRoute>
+        } />
 
-      {/* Nested Dashboard Routes */}
-      <Route path="/dashboard"
-      element={
-        <ProtectedRoute>
-          <DashboardSection/>
-        </ProtectedRoute>
-      } />
+        {/* Nested Dashboard Routes */}
+        <Route path="/dashboard" 
+            element={
+            <ProtectedRoute>
+                <DashboardSection /> 
+            </ProtectedRoute>
+        } />
 
-      {/* Index Route */}
-      <Route index element={<DashboardOverview />} />
-      <Route path="movies" element={<DashboardMovies />} />
-      <Route path="shows" element={<DashboardShows />} />
+        {/* Index Route */}
+        <Route index element={<DashboardOverview />}/>
+        <Route path="movies" element={<DashboardMovies />}/>
+        {/* <Route path="shows" element={<DashboardShows />}/> */}
 
-      {/* 404 Route */}
-            <Route path="*" element={<NotFoundPage />} />
-    </Routes>  
-  </div>
+        {/* 404 Route */}
+        <Route path="*" element={<NotFoundPage />}/>
+      </Routes>
+    </div>
   );
 }
 
@@ -155,10 +155,8 @@ const styles = {
     margin:"0 auto",
     padding: "20px",
   },
-  button:{
+  button: {
     padding: "8px 12px",
-
+    marginTop:"8px",
   },
 };
-
-export default App

@@ -1,5 +1,5 @@
-import { NavLink } from 'react-router-dom';
-export default function Navbar(){
+import { NavLink } from "react-router-dom";
+export default function Navbar() {
     return(
         <nav style={styles.nav}>
             <h3>BookMyShow App</h3>
@@ -33,21 +33,21 @@ export default function Navbar(){
         </nav>
     );
 }
-function getNavStyle({isActive}){
+function getNavStyle({isActive}) {
     return{
         textDecoration: "none",
-        color: isActive ? "#d32f2f" : "#333",
+        color: isActive? "#d32f2f" : "#333",
         fontWeight: isActive ? "bold" : "normal",
         borderBottom: isActive ? "2px solid #d32f2f" : "none",
-        padding: "4px"
+        paddingBottom: "4px"
     };
 }
 const styles = {
-    nav : {
+    nav: {
         display:"flex",
         justifyContent: "space-between",
         alignItems: "center",
-        padding:"15px 25px",
+        padding: "15px 25px",
         borderBottom: "1px solid #ddd",
         marginBottom: "20px"
     },

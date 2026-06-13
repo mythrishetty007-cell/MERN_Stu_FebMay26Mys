@@ -1,22 +1,22 @@
 import { NavLink, Outlet } from "react-router-dom";
-export default function DashboardSection(){
+export default function DashboardSection() {
     return(
         <section style={styles.container}>
             <aside style={styles.sidebar}>
                 <h3>Dashboard</h3>
                 <nav style={styles.sidebarLinks}>
-                    <NavLink
+                    <NavLink 
                     to="/dashboard"
                     end
                     style={getLinkStyle}>
                         Overview
                     </NavLink>
-                    <NavLink
+                    <NavLink 
                     to="/dashboard/movies"
                     style={getLinkStyle}>
                         Movies
                     </NavLink>
-                    <NavLink
+                    <NavLink 
                     to="/dashboard/shows"
                     style={getLinkStyle}>
                         Shows
@@ -34,14 +34,14 @@ export default function DashboardSection(){
 function getLinkStyle({isActive}) {
     return{
         textDecoration: "none",
-        color: isActive ? "#d32f2f" : "#333",
+        color: isActive? "#d32f2f" : "#333",
         fontWeight: isActive ? "bold" : "normal",
         // borderBottom: isActive ? "2px solid #d32f2f" : "none",
-        // padding: "4px"
-    };
+        // paddingBottom: "4px"
+    };    
 }
 const styles = {
-    container : {
+    container: {
         display:"flex",
         gap: "20px",
         marginTop: "20px"
@@ -52,7 +52,7 @@ const styles = {
         paddingRight: "20px"
     },
     sidebarLinks: {
-        display:"flex",
+        display: "flex",
         flexDirection: "column",
         gap: "10px"
     },
