@@ -46,7 +46,7 @@ Admin Dashboard
 import { NavLink, useNavigate } from "react-router-dom";
 
 
-import { useAuth } from "../hooks/useAuth";
+import { useAuth } from "../context/AuthContext";
 
 
 export default function Navbar() {
