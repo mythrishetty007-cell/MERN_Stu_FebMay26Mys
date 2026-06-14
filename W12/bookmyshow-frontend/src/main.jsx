@@ -9,29 +9,39 @@ SPRINT 2 – AUTH PROVIDER INTEGRATION
 TOPICS COVERED:
 
 
+✓ React 18 Root API
 ✓ BrowserRouter
-✓ Global Providers
 ✓ Context Provider Composition
+✓ Global Authentication Availability
 
 
 WHY THIS FILE?
 
 
-Providers should wrap the application once.
+main.jsx is the true entry point
+of the application.
+
+
+Sprint 1:
 
 
 BrowserRouter
 ↓
+App
+
+
+Sprint 2:
+
+
 AuthProvider
 ↓
-Entire Application
+BrowserRouter
+↓
+App
 
 
-This allows every component to access:
-
-
-✓ Routing
-✓ Authentication
+This ensures authentication state
+is available throughout the app.
 
 
 =========================================================
@@ -44,39 +54,88 @@ import { BrowserRouter } from "react-router-dom";
 
 
 import App from "./App";
-
-
 import "./index.css";
 
 
 import { AuthProvider } from "./context/AuthContext";
 
 
-ReactDOM.createRoot(document.getElementById("root")).render(
+ReactDOM.createRoot(
+  document.getElementById("root")
+).render(
   <React.StrictMode>
-    <BrowserRouter>
-      <AuthProvider>
+
+
+    {/*
+    =====================================================
+    AUTH PROVIDER
+
+
+    Makes authentication state available
+    globally.
+
+
+    Examples:
+
+
+    Navbar
+    ↓
+    useAuth()
+
+
+    ProtectedRoute
+    ↓
+    useAuth()
+
+
+    Login
+    ↓
+    useAuth()
+
+
+    =====================================================
+    */}
+
+
+    <AuthProvider>
+
+
+      <BrowserRouter>
+
+
         <App />
-      </AuthProvider>
-    </BrowserRouter>
-  </React.StrictMode>,
+
+
+      </BrowserRouter>
+
+
+    </AuthProvider>
+
+
+  </React.StrictMode>
 );
 
 
 /*
 =========================================================
-APPLICATION TREE
+APPLICATION FLOW
 
 
-BrowserRouter
+index.html
+↓
+main.jsx
 ↓
 AuthProvider
 ↓
-App
+BrowserRouter
+↓
+App.jsx
+↓
+AppRoutes.jsx
+↓
+Layouts
 ↓
 Pages
-↓
-Components
 
 
 =========================================================
@@ -85,13 +144,20 @@ Components
 KEY TAKEAWAYS
 
 
-1. Providers should live near the root.
+1. Context Providers should wrap
+   the components that consume them.
 
 
-2. Auth becomes globally available.
+2. Authentication becomes globally
+   accessible.
 
 
-3. Components don't require prop drilling.
+3. BrowserRouter and AuthProvider
+   work together seamlessly.
+
+
+4. This prepares the application
+   for real login/logout flows.
 
 
 =========================================================
