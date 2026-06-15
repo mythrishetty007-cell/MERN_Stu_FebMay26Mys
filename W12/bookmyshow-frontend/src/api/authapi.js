@@ -1,13 +1,18 @@
+// src/api/authApi.js
+
+
 /*
 =========================================================
+SPRINT 2 – AUTHENTICATION API LAYER
+
+
 TOPICS COVERED
 
 
-• Authentication API Layer
-• Axios Service Functions
-• Backend Contract Consumption
-• Error Propagation
-• Reusable API Architecture
+✓ Axios Service Functions
+✓ Backend Contract Consumption
+✓ Error Normalization
+✓ Reusable API Architecture
 
 
 WHY THIS FILE EXISTS
@@ -27,8 +32,8 @@ IMPLEMENTATION NOTES
 
 • Uses the shared axios instance.
 • Returns response.data for consistency.
-• Allows calling components to handle UI concerns.
-• Errors are re-thrown to preserve backend messages.
+• Normalizes backend errors into JavaScript Errors.
+• Allows UI components to focus on presentation.
 
 
 KEY TAKEAWAYS
@@ -61,15 +66,18 @@ Request:
 }
 
 
-Response:
+Actual Backend Response:
 {
     success: true,
-    message: "...",
-    data: {
-        email
-    }
+    message: "User registered successfully",
+    data: { ... }
 }
+
+
+=========================================================
 */
+
+
 export const registerUser = async (userData) => {
   try {
     const response = await api.post("/auth/register", userData);
@@ -77,19 +85,7 @@ export const registerUser = async (userData) => {
 
     return response.data;
   } catch (error) {
-    /*
-        Preserve backend error messages.
-
-
-        Example:
-        "User already exists"
-        */
-    throw (
-      error.response?.data || {
-        success: false,
-        message: "Registration failed",
-      }
-    );
+    throw new Error(error.response?.data?.message || "Registration failed");
   }
 };
 
@@ -97,6 +93,23 @@ export const registerUser = async (userData) => {
 /*
 =========================================================
 VERIFY OTP
+
+
+NOTE:
+
+
+OTP UI has been intentionally excluded
+from the Frontend MVP.
+
+
+This function is retained for:
+
+
+✓ Backend parity
+✓ Future enhancement
+✓ Teaching reference
+
+
 =========================================================
 
 
@@ -111,12 +124,10 @@ Request:
 }
 
 
-Response:
-{
-    success: true,
-    message: "OTP verified successfully"
-}
+=========================================================
 */
+
+
 export const verifyOtp = async (otpData) => {
   try {
     const response = await api.post("/auth/verify-otp", otpData);
@@ -124,12 +135,7 @@ export const verifyOtp = async (otpData) => {
 
     return response.data;
   } catch (error) {
-    throw (
-      error.response?.data || {
-        success: false,
-        message: "OTP verification failed",
-      }
-    );
+    throw new Error(error.response?.data?.message || "OTP verification failed");
   }
 };
 
@@ -151,16 +157,26 @@ Request:
 }
 
 
-Response:
+ACTUAL VERIFIED BACKEND RESPONSE
+
+
 {
-    success: true,
-    message: "Login successful",
-    data: {
-        token,
-        user
+    "success": true,
+    "message": "Login successful",
+    "data": {
+        "token": "...",
+        "user": {
+            "id": "...",
+            "role": "user"
+        }
     }
 }
+
+
+=========================================================
 */
+
+
 export const loginUser = async (credentials) => {
   try {
     const response = await api.post("/auth/login", credentials);
@@ -168,11 +184,61 @@ export const loginUser = async (credentials) => {
 
     return response.data;
   } catch (error) {
-    throw (
-      error.response?.data || {
-        success: false,
-        message: "Login failed",
-      }
-    );
+    throw new Error(error.response?.data?.message || "Login failed");
   }
 };
+
+
+/*
+=========================================================
+ERROR STRATEGY
+
+
+Backend
+
+
+{
+    success: false,
+    message: "User already exists"
+}
+
+
+↓
+
+
+Frontend
+
+
+throw new Error("User already exists")
+
+
+↓
+
+
+UI
+
+
+catch(error) {
+    setError(error.message);
+}
+
+
+=========================================================
+
+
+KEY TAKEAWAYS
+
+
+1. API layer normalizes errors.
+
+
+2. UI components consume a consistent
+   Error object.
+
+
+3. Backend response shapes remain
+   encapsulated within the API layer.
+
+
+=========================================================
+*/
