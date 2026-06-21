@@ -131,28 +131,23 @@ NOT tiny reusable components.
 
 const Home = lazy(() => import("../pages/Home"));
 
-
 const Movies = lazy(() => import("../pages/Movies"));
-
 
 const Login = lazy(() => import("../pages/Login"));
 
-
 const Signup = lazy(() => import("../pages/Signup"));
-
 
 const Bookings = lazy(() => import("../pages/Bookings"));
 
-
 const NotFound = lazy(() => import("../pages/NotFound"));
 
-
 const Dashboard = lazy(() => import("../pages/admin/Dashboard"));
-
 
 const MovieManagement = lazy(() => import("../pages/admin/MovieManagement"));
 
 const MovieDetails = lazy(() => import("../pages/MovieDetails"));
+
+const MyBookings = lazy(() => import("../pages/MyBookings"));
 
 /*
 =========================================================
@@ -269,6 +264,14 @@ export default function AppRoutes() {
           }
         />
 
+        <Route
+          path="/my-bookings"
+          element={
+            <ProtectedRoute>
+              <MyBookings />
+            </ProtectedRoute>
+          }
+        />
 
         {/*
         =================================================
