@@ -48,93 +48,60 @@ across every admin page.
 */
 
 
-import {
-
-
-    NavLink,
-
-
-    Outlet
-
-
-} from "react-router-dom";
+import { NavLink, Outlet, useNavigate } from "react-router-dom";
+import { useAuth } from "../context/AuthContext";
 
 
 export default function AdminLayout() {
+  const navigate = useNavigate();
 
 
-    return (
+  const { logout } = useAuth();
 
 
-        <section style={styles.container}>
+  function handleLogout() {
+    logout();
 
 
-            {/*
+    navigate("/login");
+  }
+  return (
+    <section style={styles.container}>
+      {/*
       ===================================================
       ADMIN SIDEBAR
       ===================================================
       */}
 
 
-            <aside style={styles.sidebar}>
+      <aside style={styles.sidebar}>
+        <h2>Admin Panel</h2>
 
 
-                <h2>
+        <nav style={styles.nav}>
+          <NavLink to="/admin" end style={getNavStyle}>
+            Dashboard
+          </NavLink>
 
 
-                    Admin Panel
+          <NavLink to="/admin/movies" style={getNavStyle}>
+            Movies
+          </NavLink>
 
 
-                </h2>
+          <NavLink to="/admin/shows" style={getNavStyle}>
+            Shows
+          </NavLink>
 
 
-                <nav style={styles.nav}>
+          <button style={styles.logoutButton} onClick={handleLogout}>
+            Logout
+          </button>
+        </nav>
+      </aside>
 
 
-                    <NavLink
-
-
-                        to="/admin"
-
-
-                        end
-
-
-                        style={getNavStyle}
-
-
-                    >
-
-
-                        Dashboard
-
-
-                    </NavLink>
-
-
-                    <NavLink
-                        to="/admin/movies"
-                        style={getNavStyle}
-                    >
-                        Movies
-                    </NavLink>
-
-                    <NavLink
-                        to="/admin/shows"
-                        style={getNavStyle}
-                    >
-                        Shows
-                    </NavLink>
-
-
-
-                </nav>
-
-
-            </aside>
-
-
-            {/*
+      {/*
       ===================================================
       ADMIN CONTENT
 
@@ -153,21 +120,11 @@ export default function AdminLayout() {
       */}
 
 
-            <main style={styles.content}>
-
-
-                <Outlet />
-
-
-            </main>
-
-
-        </section>
-
-
-    );
-
-
+      <main style={styles.content}>
+        <Outlet />
+      </main>
+    </section>
+  );
 }
 
 
@@ -184,100 +141,73 @@ their current location.
 */
 
 
-function getNavStyle({
+function getNavStyle({ isActive }) {
+  return {
+    textDecoration: "none",
 
 
-    isActive
+    color: isActive ? "#d32f2f" : "#333",
 
 
-}) {
-
-
-    return {
-
-
-        textDecoration: "none",
-
-
-        color: isActive
-            ? "#d32f2f"
-            : "#333",
-
-
-        fontWeight: isActive
-            ? "bold"
-            : "normal"
-
-
-    };
-
-
+    fontWeight: isActive ? "bold" : "normal",
+  };
 }
 
 
 const styles = {
+  container: {
+    display: "flex",
 
 
-    container: {
+    minHeight: "100vh",
+  },
 
 
-        display: "flex",
+  sidebar: {
+    width: "250px",
 
 
-        minHeight: "100vh"
+    background: "#fff",
 
 
-    },
+    borderRight: "1px solid #ddd",
 
 
-    sidebar: {
+    padding: "25px",
+  },
 
 
-        width: "250px",
+  nav: {
+    display: "flex",
 
 
-        background: "#fff",
+    flexDirection: "column",
 
 
-        borderRight: "1px solid #ddd",
+    gap: "15px",
 
 
-        padding: "25px"
+    marginTop: "25px",
+  },
 
 
-    },
+  content: {
+    flex: 1,
 
 
-    nav: {
+    padding: "30px",
+  },
 
 
-        display: "flex",
+  logoutButton: {
+    marginTop: "20px",
 
 
-        flexDirection: "column",
+    padding: "10px",
 
 
-        gap: "15px",
-
-
-        marginTop: "25px"
-
-
-    },
-
-
-    content: {
-
-
-        flex: 1,
-
-
-        padding: "30px"
-
-
-    }
-
-
+    cursor: "pointer",
+  },
 };
 
 
