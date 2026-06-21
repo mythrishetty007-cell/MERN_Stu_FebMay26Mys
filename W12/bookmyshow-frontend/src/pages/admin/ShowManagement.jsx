@@ -93,17 +93,19 @@ export default function ShowManagement() {
         }}
       >
         <thead>
-          <tr>
-            <th>Movie</th>
-            <th>Date</th>
-            <th>Time</th>
-            <th>Seats</th>
-            <th>Actions</th>
-          </tr>
-        </thead>
+        <tr>
+          <th>Movie</th>
+          <th>Date</th>
+          <th>Time</th>
+          <th>Total Seats</th>
+          <th>Available Seats</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
 
 
-        <tbody>
+
+      <tbody>
           {shows.map((show) => (
             <tr key={show._id}>
               <td>{show.movieId?.title}</td>
@@ -115,16 +117,23 @@ export default function ShowManagement() {
               <td>{show.time}</td>
 
 
+              <td>{show.totalSeats}</td>
+
+
               <td>{show.availableSeats}</td>
 
 
               <td>
-                <button onClick={() => setEditingShow(show)}>Edit</button>{" "}
+                <button onClick={() => setEditingShow(show)}>Edit</button>
+
+
                 <button onClick={() => handleDelete(show._id)}>Delete</button>
               </td>
             </tr>
           ))}
         </tbody>
+
+
       </table>
     </section>
   );
