@@ -1,3 +1,4 @@
+// MERN_Stu_FebMay26Mys\W12\Master_bookmyshow-frontend\src\components\admin\MovieForm.jsx
 import { useState, useEffect } from "react";
 
 
@@ -14,7 +15,12 @@ export default function MovieForm({ initialData, onSubmit, buttonText }) {
 
   useEffect(() => {
     if (initialData) {
-      setFormData(initialData);
+      setFormData({
+        ...initialData,
+        releaseDate: initialData.releaseDate
+          ? initialData.releaseDate.split("T")[0]
+          : "",
+      });
     }
   }, [initialData]);
 
@@ -49,25 +55,37 @@ export default function MovieForm({ initialData, onSubmit, buttonText }) {
     <form onSubmit={handleSubmit} style={styles.form}>
       <input
         name="title"
-        placeholder="Title"
+        placeholder="Movie Title"
         value={formData.title}
         onChange={handleChange}
         required
       />
 
 
-      <input
+      <select
         name="genre"
-        placeholder="Genre"
         value={formData.genre}
         onChange={handleChange}
         required
-      />
+      >
+        <option value="">Select Genre</option>
+
+
+        <option value="Action">Action</option>
+        <option value="Comedy">Comedy</option>
+        <option value="Drama">Drama</option>
+        <option value="Horror">Horror</option>
+        <option value="Sci-Fi">Sci-Fi</option>
+        <option value="Romance">Romance</option>
+        <option value="Thriller">Thriller</option>
+      </select>
 
 
       <input
         type="number"
         step="0.1"
+        min="1"
+        max="5"
         name="rating"
         placeholder="Rating"
         value={formData.rating}
